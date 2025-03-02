@@ -24,4 +24,35 @@ LEFT JOIN countries_languages ON countries.Code = countries_languages.CountryCod
 LEFT JOIN countries_continents ON countries.Code = countries_continents.CountryCode
 WHERE countries_continents.Continent = 'Europe'
 AND countries.Population > 50000000
-AND countries_languages.Language = 'Spanish';
+AND countries_languages.Language = 'Spanish'; 
+
+--1d
+select * from countries_languages
+where Language not in 
+    select *
+    from 
+    (select language, CountryCode )
+
+;
+
+WITH DanishEmpireCountries AS (
+    -- Get all country codes for the Danish Empire
+    SELECT CountryCode
+    FROM empires
+    WHERE Empire = 'Danish Empire'
+),
+LanguagesInDanishEmpire AS (
+    -- Get languages spoken in countries of Danish Empire
+    SELECT cl.Language
+    FROM countries_languages cl
+    JOIN DanishEmpireCountries dec ON cl.CountryCode = dec.CountryCode
+    GROUP BY cl.Language
+    HAVING COUNT(DISTINCT cl.CountryCode) = (SELECT COUNT(*) FROM DanishEmpireCountries)
+)
+-- Count the number of languages spoken in all countries of Danish Empire
+SELECT count(*) AS LanguagesSpokenInAllDanishEmpireCountries
+FROM LanguagesInDanishEmpire;
+
+
+select * from empires;
+select * from countries_languages;
