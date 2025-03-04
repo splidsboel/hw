@@ -13,7 +13,7 @@ select count(*) from (
     group by CountryCode
     having 
         count(*) > 1
-        AND SUM(CASE WHEN Continent = 'Europe' THEN 1 ELSE 0 END) > 0
+        AND SUM(CASE WHEN Continent = 'Europe' THEN 1 ELSE 0 END) > 0  
 );
 
 
@@ -27,14 +27,6 @@ AND countries.Population > 50000000
 AND countries_languages.Language = 'Spanish'; 
 
 --1d
-select * from countries_languages
-where Language not in 
-    select *
-    from 
-    (select language, CountryCode )
-
-;
-
 WITH DanishEmpireCountries AS (
     -- Get all country codes for the Danish Empire
     SELECT CountryCode
@@ -56,3 +48,37 @@ FROM LanguagesInDanishEmpire;
 
 select * from empires;
 select * from countries_languages;
+
+--2c
+--Person(PID, PN, S)
+--House(HID, HS, HZ)
+--Location(HZ, HC)
+
+create table person(
+    PID int PRIMARY KEY,
+    PN varchar(50) not null,
+    S int not null
+);
+insert into person
+select distinct PID, PN, S 
+from Rentals;
+
+create table House (
+    HID int primary key,
+    HS varchar(50) not null,
+    HZ int not null,
+    foreign key (HZ) references Location(HZ)
+)
+insert into House
+select distinct HID, HS, HZ 
+from Rentals;
+
+create table Location (
+    HZ int primary key,
+    HC varchar(50) not null
+)
+insert into Location
+select HZ, HC 
+from Rentals;
+
+select * from empires where Empire = 'Danish Empire';

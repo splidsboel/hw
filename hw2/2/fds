@@ -31,8 +31,9 @@
 │ Rentals: HZ --> HC │ MAY HOLD │
 └────────────────────┴──────────┘
 
-PID(PID, PN, S)
-HID(HID, HS, HZ)
-HZ(HC)
+Person(PID, PN, S)
+House(HID, HS, HZ)
+Location(HZ, HC)
+
 
 
