@@ -1,0 +1,108 @@
+[
+    {
+        "id": 1,
+        "name": "Legolas",
+        "alliance": "Elves",
+        "weapons": ["Bow", "Sword"],
+        "friends": ["Gimli", "Aragorn", "Frodo", "Gandalf"],
+        "movies": [
+            {
+                "title": "The Lord of the Rings: The Fellowship of the Ring",
+                "year": 2001
+            }, 
+            {
+                "title": "The Lord of The Rings: The Two Towers",
+                "year": 2002
+            }, 
+            {
+                "title": "The Lord of the Rings: The Return of the King",
+                "year": 2003
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Harry Potter",
+        "alliance": "Hogwarts",
+        "weapons": ["Wand"],
+        "friends": ["Hermione", "Ron", "Dumbledore", "Hagrid"],
+        "archenemy": {"name": "Voldemort", "weakness": "Horcruxes"},
+        "movies": [
+            {
+                "title": "Harry Potter and the Philosopher's Stone",
+                "year": 2001
+            },
+            {
+                "title": "Harry Potter and the Chamber of Secrets",
+                "year": 2002
+            },
+            {
+                "title": "Harry Potter and the Prisoner of Azkaban",
+                "year": 2004
+            },
+            {
+                "title": "Harry Potter and the Goblet of Fire",
+                "year": 2005
+            },
+            {
+                "title": "Harry Potter and the Order of the Phoenix",
+                "year": 2007
+            },
+            {
+                "title": "Harry Potter and the Half-Blood Prince",
+                "year": 2009
+            },
+            {
+                "title": "Harry Potter and the Deathly Hallows – Part 1",
+                "year": 2010
+            },
+            {
+                "title": "Harry Potter and the Deathly Hallows – Part 2",
+                "year": 2011
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Anakin Skywalker",
+        "alliance": "Jedi",
+        "weapons": ["Lightsaber"],
+        "friends": ["Obi-Wan Kenobi", "Ahsoka Tano", "Yoda", "Senator Palpatine"],
+        "archenemy": {"name": "Count Dooku", "weakness": "Arrogance"},
+        "estimated_kills": {
+            "battle_droids": 160000,
+            "jedi": 40,
+            "sith": 3
+        },
+        "movies": [
+            {
+                "title": "Star Wars: Episode I – The Phantom Menace",
+                "year": 1999
+            },
+            {
+                "title": "Star Wars: Episode II – Attack of the Clones",
+                "year": 2002
+            },
+            {
+                "title": "Star Wars: Episode III – Revenge of the Sith",
+                "year": 2005
+            },
+            {
+                "title": "Star Wars: The Clone Wars",
+                "year": 2008
+            },
+            {
+                "title": "Star Wars: Episode IV - A New Hope",
+                "year": 1977
+            },
+            {
+                "title": "Star Wars: Episode V - The Empire Strikes Back",
+                "year": 1980
+            },
+            {
+                "title": "Star Wars: Episode VI - Return of the Jedi",
+                "year": 1983
+            }
+        ]
+    }
+]
